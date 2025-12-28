@@ -24,16 +24,21 @@ export default function Header() {
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
-                    <motion.div
+                    <motion.a
+                        href="/"
                         className="flex items-center space-x-2"
                         whileHover={{ scale: 1.05 }}
                     >
-                        <Shield className="w-8 h-8 text-cyber-accent" />
+                        <img
+                            src="/logo.png"
+                            alt="Futuristic Kenya Logo"
+                            className="w-10 h-10 object-contain rounded-lg"
+                        />
                         <span className="text-xl font-bold">
                             <span className="text-gradient">Futuristic</span>
                             <span className="text-cyber-green ml-1">Kenya</span>
                         </span>
-                    </motion.div>
+                    </motion.a>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-8">

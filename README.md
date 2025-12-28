@@ -8,6 +8,11 @@ A production-grade cybersecurity platform built with Next.js, featuring comprehe
 - **AI Security**: Model abuse prevention, prompt injection defense, data poisoning mitigation
 - **Zero-Trust Architecture**: Identity-first security, continuous verification, micro-segmentation
 - **Active Directory Security**: Attack surface mapping, Kerberoasting defense, detection engineering
+- **Detection Engine (WIP)**: Automated security assessment engine (still under development) integrating:
+  - **Sublist3r**: Subdomain enumeration and discovery
+  - **Nmap**: Comprehensive port scanning and service fingerprinting
+  - **Nuclei**: Template-based vulnerability assessment
+  - **Nikto**: Web server security configuration scanning
 - **Threat Intelligence**: Real-time threat feeds, SOC dashboards, kill-chain visualizations
 - **Web & Application Security**: Pentesting, OWASP Top 10 coverage, Secure SDLC
 - **Additional Features**: Cloud security, container security, API security, compliance frameworks
