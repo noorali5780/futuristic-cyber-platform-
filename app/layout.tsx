@@ -23,6 +23,10 @@ export const metadata: Metadata = {
         description: "Production-grade cybersecurity engineered in Africa",
         type: "website",
     },
+    icons: {
+        icon: "/logo.png",
+        apple: "/logo.png",
+    }
 };
 
 export default function RootLayout({
