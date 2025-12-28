@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(uuid())
+  name      String
+  email     String    @unique
+  password  String
+  role      String    @default("user") // "user" or "admin"
+  createdAt DateTime  @default(now())
+  websites  Website[]
+}
+
+model Website {
+  id         String       @id @default(uuid())
+  userId     String
+  user       User         @relation(fields: [userId], references: [id])
+  url        String
+  name       String
+  ip         String       @default("Pending")
+  status     String       @default("pending") // "up", "down", "pending"
+  latency    Int          @default(0)
+  sslValid   Boolean      @default(false)
+  lastScanAt DateTime?
+  createdAt  DateTime     @default(now())
+  scans      ScanResult[]
+}
+
+model ScanResult {
+  id            String   @id @default(uuid())
+  websiteId     String
+  website       Website  @relation(fields: [websiteId], references: [id])
+  status        Int      // HTTP Status Code
+  latency       Int
+  ssl           Json     // Stores SSL details { valid, issuer, expires, daysRemaining }
+  headers       Json     // Stores header details { xFrame, hsts, csp ... }
+  details       Json?    // Stores advanced scan data (subdomains, ports, nuclei)
+  securityScore Int
+  vulnerabilities String[]
+  timestamp     DateTime @default(now())
+}
+
+model SystemLog {
+  id        String   @id @default(uuid())
+  level     String   // "info", "warn", "error"
+  message   String
+  userId    String?
+  meta      Json?
+  timestamp DateTime @default(now())
+}
