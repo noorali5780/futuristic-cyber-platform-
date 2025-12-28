@@ -15,6 +15,29 @@ A production-grade cybersecurity platform built with Next.js, featuring comprehe
   - **Nikto**: Web server security configuration scanning
 - **Threat Intelligence**: Real-time threat feeds, SOC dashboards, kill-chain visualizations
 - **Web & Application Security**: Pentesting, OWASP Top 10 coverage, Secure SDLC
+
+## 🏗️ System Architecture
+
+### Multi-Role Identity Management
+The platform features a dual-interface architecture designed for both security administrators and end-clients:
+
+- **Admin Ecosystem**: Centralized command center for security personnel to manage global threats, monitor system logs, and oversee all registered users and websites.
+- **Client Ecosystem**: Personalized security dashboard for website owners to monitor their specific attack surface, review scan reports, and track security scores.
+
+## 🖥️ Dashboards
+
+### 🛡️ Admin Command Center (`/admin`)
+- **Threat Monitoring**: Real-time visualization of detected vulnerabilities across the platform.
+- **User Management**: Administrative control over client accounts and permissions.
+- **System Logs**: Comprehensive audit trails of all system events and scanning activities.
+- **Global Reports**: Aggregated security posture analysis.
+
+### 👤 Client Security Hub (`/dashboard`)
+- **Website Monitoring**: Live status and security health tracking for client-owned domains.
+- **Deep Scan Integration**: Direct interface to trigger and review comprehensive security audits.
+- **Security Scoring**: Dynamic scoring based on vulnerability findings and remediation status.
+- **Report Downloads**: Instant access to PDF/JSON audit reports.
+
 - **Additional Features**: Cloud security, container security, API security, compliance frameworks
 
 ### Technical Highlights
